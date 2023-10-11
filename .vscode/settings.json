@@ -1,0 +1,4 @@
+{
+    "rust-analyzer.checkOnSave.allTargets": false,
+    "idf.adapterTargetName": "esp32c3",
+}

@@ -1,0 +1,16 @@
+[package]
+name = "nmea_idf_rs"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+nmea = { version = "0.6.0", default-features=false, features = ["GNSS", "GGA"] }
+esp-alloc = "0.3.0"
+heapless = "0.7.16"
+
+[features]
+default = [ ]
+
