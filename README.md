@@ -1,6 +1,6 @@
 # Example of integration ESP-IDF and Rust NMEA crate
 
-The example shows how to integrate ESP-IDF with Rust no_std crate like NMEA.
+The example shows how to integrate ESP-IDF with Rust no_std crate like [NMEA](https://crates.io/crates/nmea).
 
 ## Prerequisites
 
@@ -71,6 +71,29 @@ From the base folder of the project (`esp_idf_project`), run the build process a
 
 ```bash
 idf.py build flash monitor
+```
+
+### Expected output
+
+```
+I (316) main_task: Started on CPU0
+I (316) main_task: Calling app_main()
+Remaining stack space before calling Rust function in app_main: 2392
+Message from Rust: Hello ESP-RS. https://github.com/esp-rs
+Size of NMEA: 12272
+Remaining stack space after calling Rust function in app_main: 2392
+Remaining stack space before calling Rust function in nmea_gga_task: 36068
+NMEA altitude: 61.700001
+Remaining stack space after calling Rust function in nmea_gga_task: 25924
+GGA Data:
+- Latitude: 53°21.6802' N
+- Longitude: -7°29.6628' W
+- GPS Quality: 1 (GPS fix)
+- Number of Satellites: 8
+- Horizontal Dilution of Precision: 1.0
+- Altitude: 61.7 Meters
+- Height of Geoid above WGS84 Ellipsoid: 55.2 Meters
+I (376) main_task: Returned from app_main()
 ```
 
 ## Simulation
