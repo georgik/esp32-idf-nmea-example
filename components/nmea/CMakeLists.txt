@@ -18,11 +18,11 @@ endif()
 set(CARGO_BUILD_FLAGS "-Zbuild-std=core,panic_abort")
 
 # Set directories and target
-set(RUST_PROJECT_DIR "${CMAKE_CURRENT_LIST_DIR}/rust_crate")
+set(RUST_PROJECT_DIR "${CMAKE_CURRENT_LIST_DIR}/nmea_idf_rs")
 set(RUST_BUILD_DIR "${CMAKE_CURRENT_BINARY_DIR}")
 set(RUST_TARGET_DIR "${RUST_BUILD_DIR}/target")
-set(RUST_STATIC_LIBRARY "${RUST_TARGET_DIR}/${RUST_CARGO_TARGET}/debug/librust_crate.a")
-# set(RUST_STATIC_LIBRARY "${RUST_TARGET_DIR}/${RUST_CARGO_TARGET}/release/librust_crate.a")
+set(RUST_STATIC_LIBRARY "${RUST_TARGET_DIR}/${RUST_CARGO_TARGET}/debug/libnmea_idf_rs.a")
+# set(RUST_STATIC_LIBRARY "${RUST_TARGET_DIR}/${RUST_CARGO_TARGET}/release/libnmea_idf_rs.a")
 
 # ExternalProject_Add for building the Rust project
 ExternalProject_Add(

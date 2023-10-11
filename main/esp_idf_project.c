@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "esp_rust_component.h"
+#include "nmea_idf.h"
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"

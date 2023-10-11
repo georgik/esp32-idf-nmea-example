@@ -21,12 +21,12 @@ esp_idf_project/
 |   |-- esp_idf_project.c
 |-- sdkconfig
 |-- components/
-|   |-- esp_rust_component/
+|   |-- nma /
 |       |-- CMakeLists.txt
 |       |-- include/
-|           |-- esp_rust_component.h
-|       |-- esp_rust_component.c
-|       |-- rust_crate/
+|           |-- nmea_idf.h
+|       |-- nmea_idf.c
+|       |-- nmea_idf_rs /
 |           |-- Cargo.toml
 |           |-- rust-toolchain.toml
 |           |-- src/
@@ -37,9 +37,9 @@ esp_idf_project/
 
 Key elements:
 - `esp_idf_project` contains main C code like any other ESP-IDF application.
-- The ESP-IDF componet with name `esp_rust_component` is stored in subdirectory with components.
-  - The `esp_rust_component` component contains C adapter layer which helps interfacing with Rust library.
-- The Rust code is stored in `components/esp_rust_component/rust_crate` subdirectory.
+- The ESP-IDF componet with name `nmea` is stored in subdirectory with components.
+  - The `nmea_idf_rs` component contains C adapter layer which helps interfacing with Rust library.
+- The Rust code is stored in `components/nmea/nmea_idf_rs` subdirectory.
 
 The component can be uploaded later on to [Component Manager](https://components.espressif.com/).
 
@@ -49,9 +49,9 @@ The component can be uploaded later on to [Component Manager](https://components
 Set target for main ESP-IDF application:
 
 ```bash
-idf.py set-target <target>
+#idf.py set-target <target>
 # idf.py set-target esp32
-# idf.py set-target esp32-c3
+idf.py set-target esp32-c3
 # idf.py set-target esp32-s3
 ```
 
@@ -61,12 +61,10 @@ Define which toolchain should be used for the Rust component in file `esp_rust_c
 ```toml
 [toolchain]
 # Use "esp" for ESP32, ESP32-S2, and ESP32-S3
-channel = "esp"
+#channel = "esp"
 # Use "nightly" for ESP32-C*, ESP32-H* targets
-# channel = "nightly"
-
+channel = "nightly"
 ```
-
 
 ### Build the Project
 From the base folder of the project (`esp_idf_project`), run the build process as you usually would for an ESP-IDF project:
@@ -74,7 +72,6 @@ From the base folder of the project (`esp_idf_project`), run the build process a
 ```bash
 idf.py build flash monitor
 ```
-
 
 ## Simulation
 
