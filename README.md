@@ -73,6 +73,12 @@ From the base folder of the project (`esp_idf_project`), run the build process a
 idf.py build flash monitor
 ```
 
+#### Build the Project in Debug
+
+```bash
+idf.py -DCMAKE_BUILD_TYPE=Debug build flash monitor
+```
+
 ### Expected output
 
 ```
